@@ -1,8 +1,9 @@
 import React from 'react';
+import Home from './pages/Home';
 
-class App extends React {
+class App extends React.PureComponent {
   render() {
-    return <></>;
+    return <Home />;
   }
 }
 
