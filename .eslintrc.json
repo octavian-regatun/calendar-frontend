@@ -22,6 +22,9 @@
   "rules": {
     "prettier/prettier": "error",
     "react/prop-types": "off",
-    "react/destructuring-assignment": "off"
+    "react/destructuring-assignment": "off",
+    "react/state-in-constructor": "off",
+    "no-plusplus": "off",
+    "no-param-reassign": "off"
   }
 }
