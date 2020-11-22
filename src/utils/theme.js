@@ -6,6 +6,10 @@ const customTheme = {
     },
     title: '#ffffff',
     subtitle: '#bbbdc0'
+  },
+  orange: {
+    primary: '#FF7F00',
+    light: '#FFB043'
   }
 };
 
