@@ -59,10 +59,11 @@ export default function Login() {
             fontSize: '2rem',
             width: '25vw',
             color: customTheme.orange.light,
-            fontFamily: 'Montserrat'
+            fontFamily: 'Montserrat',
+            fontWeight: '300'
           }}
         >
-          You can join PLAN IT by logging through a social media app
+          You can join CALENDAR by logging through a social media app
         </h2>
       </Grid>
       <Grid
