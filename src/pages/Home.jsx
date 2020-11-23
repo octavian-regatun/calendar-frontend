@@ -11,7 +11,12 @@ class Home extends React.PureComponent {
 
         <Container
           maxWidth
-          style={{ height: '100vh', padding: 0, background: '#171D25', overflow: 'auto' }}
+          style={{
+            height: '100vh',
+            padding: 0,
+            background: '#171D25',
+            overflow: 'auto'
+          }}
         >
           <Grid container>
             <Grid item xs={3}>
