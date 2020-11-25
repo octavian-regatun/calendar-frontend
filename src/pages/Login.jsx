@@ -90,7 +90,7 @@ export default function Login() {
           className={classes.button}
           type='button'
           onClick={() => {
-            window.location.href = 'http://me.mydomain.com:8080/auth/google';
+            window.location.href = `${process.env.REACT_APP_BACKEND_URL/auth/google}`;
           }}
         >
           <div
