@@ -12,7 +12,7 @@ export default function App() {
 
   useEffect(() => {
     axios
-      .get(`${backendURL}/auth/loggedIn`, {
+      .get(`${backendURL}/api/auth/loggedIn`, {
         withCredentials: true
       })
       .then((res) => {
