@@ -25,6 +25,7 @@ jobs:
             SESSION_SECRET
             NODE_ENV
             FRONTEND_BUILD_PATH
+            --recursive
         env:
           DB_USER: ${{ secrets.DB_USER }}
           DB_PASS: ${{ secrets.DB_PASS }}
