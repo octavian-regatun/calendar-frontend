@@ -1,0 +1,36 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.6.8 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "or-calendar"
+          heroku_email: "octavian.regatun@outlook.com"
+          usedocker: true
+          docker_build_args: |
+            DB_USER
+            DB_PASS
+            GOOGLE_CLIENT_ID
+            GOOGLE_CLIENT_SECRET
+            FRONTEND_URL
+            SESSION_SECRET
+            NODE_ENV
+            FRONTEND_BUILD_PATH
+        env:
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASS }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          FRONTEND_URL: ${{ secrets.FRONTEND_URL }}
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+          NODE_ENV: ${{ secrets.NODE_ENV }}
+          FRONTEND_BUILD_PATH: ${{ secrets.FRONTEND_BUILD_PATH }}
