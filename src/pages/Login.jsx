@@ -83,7 +83,9 @@ export default function Login() {
             alignItems: 'center'
           }}
         >
-          <h1 style={{ fontSize: '4rem', fontFamily: 'Montserrat' }}>CALENDAR</h1>
+          <h1 style={{ fontSize: '4rem', fontFamily: 'Montserrat' }}>
+            CALENDAR
+          </h1>
           <img src={Logo} alt='logo' style={{ width: '15rem' }} />
         </div>
         <button
