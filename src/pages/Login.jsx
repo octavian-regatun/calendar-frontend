@@ -4,6 +4,7 @@ import Logo from '../images/Logo.svg';
 import LoginSVG from '../images/Login.svg';
 import GoogleSVG from '../images/Google.svg';
 import customTheme from '../utils/theme';
+import backendURL from '../utils/config';
 
 const useStyles = makeStyles({
   button: {
@@ -92,7 +93,7 @@ export default function Login() {
           className={classes.button}
           type='button'
           onClick={() => {
-            window.location.href = `${process.env.REACT_APP_BACKEND_URL}/api/auth/google`;
+            window.location.href = `${backendURL}/api/auth/google`;
           }}
         >
           <div
