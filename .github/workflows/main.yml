@@ -35,3 +35,4 @@ jobs:
           SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
           NODE_ENV: ${{ secrets.NODE_ENV }}
           FRONTEND_BUILD_PATH: ${{ secrets.FRONTEND_BUILD_PATH }}
+          --recursive: ""
