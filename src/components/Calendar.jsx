@@ -129,10 +129,19 @@ class Calendar extends React.PureComponent {
         <Grid item xs={12}>
           <h1 className={classes.title}>Calendar</h1>
         </Grid>
-        <Grid container item xs={12} className={classes.containerDate} alignItems='center'>
+        <Grid
+          container
+          item
+          xs={12}
+          className={classes.containerDate}
+          alignItems='center'
+        >
           <h2 className={classes.date}>October, 2020</h2>
           <div>
-            <ButtonBase className={classes.navigationButton} style={{ marginRight: '0.5rem' }}>
+            <ButtonBase
+              className={classes.navigationButton}
+              style={{ marginRight: '0.5rem' }}
+            >
               <NavigateBeforeRounded fontSize='large' />
             </ButtonBase>
             <ButtonBase className={classes.navigationButton}>
