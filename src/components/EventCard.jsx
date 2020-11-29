@@ -51,18 +51,30 @@ class EventCard extends React.PureComponent {
         <Button className={classes.container}>
           <div href='www.google.ro' className={classes.content}>
             <div className={classes.date}>
-              <h1 style={{ margin: '0', padding: '0' }} className={classes.title}>
+              <h1
+                style={{ margin: '0', padding: '0' }}
+                className={classes.title}
+              >
                 {this.props.startAt}
               </h1>
-              <h3 style={{ margin: '0 0 0 0', padding: '0' }} className={classes.subtitle}>
+              <h3
+                style={{ margin: '0 0 0 0', padding: '0' }}
+                className={classes.subtitle}
+              >
                 {this.props.endAt}
               </h3>
             </div>
             <div className={classes.about}>
-              <h2 style={{ margin: '0', padding: '0' }} className={classes.title}>
+              <h2
+                style={{ margin: '0', padding: '0' }}
+                className={classes.title}
+              >
                 {this.props.title}
               </h2>
-              <h4 style={{ margin: '0', padding: '0' }} className={classes.subtitle}>
+              <h4
+                style={{ margin: '0', padding: '0' }}
+                className={classes.subtitle}
+              >
                 {this.props.description}
               </h4>
             </div>
