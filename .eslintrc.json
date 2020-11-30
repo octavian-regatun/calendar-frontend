@@ -5,7 +5,12 @@
     "node": true,
     "serviceworker": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier", "prettier/react"],
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "prettier/react"
+  ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
@@ -25,6 +30,8 @@
     "react/destructuring-assignment": "off",
     "react/state-in-constructor": "off",
     "no-plusplus": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-unused-vars": "warn",
+    "import/prefer-default-export": "off"
   }
 }
