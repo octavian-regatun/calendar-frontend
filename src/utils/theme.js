@@ -9,7 +9,8 @@ const customTheme = {
   },
   orange: {
     primary: '#FF7F00',
-    light: '#FFB043'
+    light: '#FFB043',
+    dark: '#c67600'
   }
 };
 
