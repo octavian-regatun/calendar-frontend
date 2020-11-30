@@ -1,0 +1,92 @@
+.Calendar {
+  background-color: #1e242d !important;
+}
+
+.Calendar__day:not(.-weekend) {
+  color: white !important;
+}
+
+.Calendar__day.-weekend.-selectedBetween {
+  color: red !important;
+}
+
+.Calendar__day.-selectedBetween {
+  color: black !important;
+}
+
+.Calendar__day.-selectedBetween:hover {
+  background-color: #e69500 !important;
+}
+
+.Calendar__day.-weekend.-selectedEnd,
+.Calendar__day.-weekend.-selectedEnd {
+  color: red !important;
+}
+
+.Calendar__day:hover {
+  background-color: #272e3a !important;
+}
+
+.Calendar__day:hover {
+  background-color: #272e3a !important;
+}
+
+.Calendar__day.-selectedStart,
+.Calendar__day.-selectedEnd {
+  color: black !important;
+}
+
+.Calendar__day.-selectedStart:hover,
+.Calendar__day.-selectedEnd:hover {
+  background-color: #cc6600 !important;
+}
+
+.Calendar__monthText {
+  color: white !important;
+}
+
+.Calendar__monthText:hover {
+  background-color: #272e3a !important;
+}
+
+.Calendar__yearText {
+  color: white !important;
+}
+
+.Calendar__yearText:hover {
+  background-color: #272e3a !important;
+}
+
+.Calendar__monthSelector.-open {
+  background-color: #1e242d !important;
+}
+
+.Calendar__monthSelectorItemText {
+  color: white !important;
+}
+
+.Calendar__monthSelectorItemText:hover {
+  background-color: #272e3a !important;
+}
+
+.Calendar__monthSelector {
+  background-color: #1e242d !important;
+}
+
+.Calendar__yearSelector {
+  background-color: #1e242d !important;
+  background-image: none !important;
+}
+
+.Calendar__yearSelectorText {
+  color: white !important;
+}
+.Calendar__yearSelectorText:hover {
+  background-color: #272e3a;
+}
+
+.Calendar__yearSelectorWrapper::after,
+.Calendar__yearSelectorWrapper::before {
+  background-color: #1e242d !important;
+  background-image: none !important;
+}
