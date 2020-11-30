@@ -1,7 +1,7 @@
 import { Container, Grid } from '@material-ui/core';
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import Calendar from '../components/Calendar';
+import Calendar from '../components/Calendar/Calendar';
 
 class Home extends React.PureComponent {
   render() {
@@ -10,7 +10,7 @@ class Home extends React.PureComponent {
         <Sidebar color='#171D25' height='100%' width='5rem' />
 
         <Container
-          maxWidth
+          maxWidth={false}
           style={{
             height: '100vh',
             padding: 0,
