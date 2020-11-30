@@ -5,6 +5,7 @@ import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import customTheme from '../../utils/theme';
 import { CalendarFooter } from './CalendarFooter';
 import { setDayRange } from './dayRange';
+import { calendarLocale } from './locale';
 
 export default function Calendar() {
   const defaultDayRange = setDayRange(null, null);
@@ -24,6 +25,7 @@ export default function Calendar() {
         renderFooter={() => {
           return <CalendarFooter setSelectedDayRange={setSelectedDayRange} />;
         }}
+        locale={calendarLocale}
       />
     </>
   );
