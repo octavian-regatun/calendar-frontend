@@ -30,11 +30,13 @@ export default function App() {
                 return <Home />;
 
               case false:
-                return <h1>Landing Page</h1>;
+                window.location.href = '/landingPage.html';
+                break;
 
               default:
                 return <Loading />;
             }
+            return null;
           }}
         </Route>
         <Route path='/login'>
