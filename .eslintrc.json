@@ -25,13 +25,18 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
     "react/prop-types": "off",
     "react/destructuring-assignment": "off",
     "react/state-in-constructor": "off",
     "no-plusplus": "off",
     "no-param-reassign": "off",
     "no-unused-vars": "warn",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }
