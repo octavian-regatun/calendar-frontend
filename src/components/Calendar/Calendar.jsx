@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Calendar as CustomCalendar } from 'react-modern-calendar-datepicker';
-import { calendarStyles } from './styles';
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import customTheme from '../../utils/theme';
 import { CalendarFooter } from './CalendarFooter';
