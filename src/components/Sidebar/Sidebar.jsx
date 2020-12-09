@@ -5,7 +5,7 @@ import EventNoteRoundedIcon from '@material-ui/icons/EventNoteRounded';
 import SettingsRoundedIcon from '@material-ui/icons/SettingsRounded';
 import GroupRoundedIcon from '@material-ui/icons/GroupRounded';
 
-import Logo from '../images/Logo.svg';
+import Logo from '../../images/Logo.svg';
 import './Sidebar.css';
 
 const MUIStyles = () => ({});
