@@ -11,8 +11,6 @@ export default function Calendar() {
 
   const [selectedDayRange, setSelectedDayRange] = useState(defaultDayRange);
 
-  const classes = calendarStyles();
-
   return (
     <>
       <CustomCalendar
