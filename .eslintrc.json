@@ -37,6 +37,8 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "no-underscore-dangle": "off",
+    "react/jsx-props-no-spreading": "off"
   }
 }
