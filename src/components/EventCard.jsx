@@ -7,7 +7,7 @@ import customTheme from '../utils/theme';
 
 const MUIStyles = () => ({
   container: {
-    width: '80%',
+    width: '90%',
     backgroundColor: customTheme.dark.primary.light,
     borderRadius: '1rem',
     textAlign: 'left',
@@ -43,46 +43,36 @@ const MUIStyles = () => ({
   }
 });
 
-class EventCard extends React.PureComponent {
-  render() {
-    const { classes } = this.props;
-    return (
-      <>
-        <Button className={classes.container}>
-          <div href='www.google.ro' className={classes.content}>
-            <div className={classes.date}>
-              <h1
-                style={{ margin: '0', padding: '0' }}
-                className={classes.title}
-              >
-                {this.props.startAt}
-              </h1>
-              <h3
-                style={{ margin: '0 0 0 0', padding: '0' }}
-                className={classes.subtitle}
-              >
-                {this.props.endAt}
-              </h3>
-            </div>
-            <div className={classes.about}>
-              <h2
-                style={{ margin: '0', padding: '0' }}
-                className={classes.title}
-              >
-                {this.props.title}
-              </h2>
-              <h4
-                style={{ margin: '0', padding: '0' }}
-                className={classes.subtitle}
-              >
-                {this.props.description}
-              </h4>
-            </div>
-          </div>
-        </Button>
-      </>
-    );
-  }
+function EventCard(props) {
+  const { classes } = props;
+  return (
+    <Button className={`${classes.container} ${props.className}`}>
+      <div className={classes.content}>
+        <div className={classes.date}>
+          <h1 style={{ margin: '0', padding: '0' }} className={classes.title}>
+            {props.startAt}
+          </h1>
+          <h3
+            style={{ margin: '0 0 0 0', padding: '0' }}
+            className={classes.subtitle}
+          >
+            {props.endAt}
+          </h3>
+        </div>
+        <div className={classes.about}>
+          <h2 style={{ margin: '0', padding: '0' }} className={classes.title}>
+            {props.title}
+          </h2>
+          <h4
+            style={{ margin: '0', padding: '0' }}
+            className={classes.subtitle}
+          >
+            {props.description}
+          </h4>
+        </div>
+      </div>
+    </Button>
+  );
 }
 
 export default withStyles(MUIStyles)(EventCard);
