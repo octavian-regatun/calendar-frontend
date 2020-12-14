@@ -6,7 +6,6 @@ import { addZero } from '../../utils/utils';
 const useStyles = makeStyles({
   container: {
     width: '90%',
-    backgroundColor: customTheme.dark.primary.light,
     borderRadius: '100px',
     textAlign: 'left',
     textTransform: 'none',
@@ -75,7 +74,10 @@ const useStyles = makeStyles({
 function EventCard(props) {
   const classes = useStyles();
   return (
-    <Button className={`${classes.container} ${props.className}`}>
+    <Button
+      className={`${classes.container} ${props.className}`}
+      style={{ backgroundColor: props.backgroundColor }}
+    >
       <div className={classes.content}>
         <div className={classes.containerColorTag}>
           <span

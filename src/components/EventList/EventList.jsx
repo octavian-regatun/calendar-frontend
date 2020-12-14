@@ -8,8 +8,7 @@ import backendURL from '../../utils/config';
 const useStyles = makeStyles({
   container: {
     width: '100%',
-    height: '100vh',
-    backgroundColor: '#171D25',
+    height: '100%',
     borderRadius: '10px',
     display: 'flex !important',
     flexDirection: 'column',
@@ -20,17 +19,8 @@ const useStyles = makeStyles({
   }
 });
 
-function EventList() {
+function EventList(props) {
   const classes = useStyles();
-
-  const [events, setEvents] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${backendURL}/api/events`, { withCredentials: true })
-      .then((res) => {
-        setEvents(res.data);
-      });
-  }, []);
 
   const colors = ['red', 'green', 'yellow', 'blue', 'cyan', 'purple', 'pink'];
 
@@ -39,8 +29,11 @@ function EventList() {
   }
 
   return (
-    <Scrollbars className={classes.container}>
-      {events.map((event) => (
+    <Scrollbars
+      className={classes.container}
+      style={{ backgroundColor: props.backgroundColor }}
+    >
+      {props.events.map((event) => (
         <EventCard
           key={`event-card-${event._id}`}
           className={classes.card}
@@ -49,6 +42,7 @@ function EventList() {
           startAt={event.startAt}
           endAt={event.endAt}
           colorTag={returnRandomColor(colors)}
+          backgroundColor={props.cardColor}
         />
       ))}
     </Scrollbars>

@@ -1,8 +1,11 @@
 import { Container, Grid, makeStyles } from '@material-ui/core';
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import Calendar from '../components/Calendar/Calendar';
 import EventList from '../components/EventList/EventList';
+import PublicEvents from '../components/PublicEvents/PublicEvents';
 import Sidebar from '../components/Sidebar/Sidebar';
+import backendURL from '../utils/config';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,6 +17,15 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const classes = useStyles();
+
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${backendURL}/api/events`, { withCredentials: true })
+      .then((res) => {
+        setEvents(res.data);
+      });
+  }, []);
 
   return (
     <div style={{ display: 'inline-flex', height: '100vh', width: '100vw' }}>
@@ -32,11 +44,29 @@ function Home() {
         }}
       >
         <Grid container>
-          <Grid item lg={3} xs={12}>
-            <Calendar />
+          <Grid item lg={3} xs={12} style={{ height: '100vh' }}>
+            <Grid item xs={12}>
+              <Calendar />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              style={{
+                height: '50%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
+              <PublicEvents/>
+            </Grid>
           </Grid>
           <Grid item lg={5} xs={12} style={{ height: '100vh' }}>
-            <EventList />
+            <EventList
+              cardColor='#1E242D'
+              backgroundColor='#171D25'
+              events={events}
+            />
           </Grid>
         </Grid>
       </Container>
