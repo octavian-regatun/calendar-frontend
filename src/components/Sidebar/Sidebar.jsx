@@ -4,6 +4,7 @@ import GroupRoundedIcon from '@material-ui/icons/GroupRounded';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import SettingsRoundedIcon from '@material-ui/icons/SettingsRounded';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../../images/Logo.svg';
 import './Sidebar.css';
 
@@ -46,7 +47,9 @@ function Sidebar(props) {
         backgroundColor: props.color
       }}
     >
-      <img className={classes.logo} src={Logo} alt='logo' />
+      <Link to='/'>
+        <img className={classes.logo} src={Logo} alt='logo' />
+      </Link>
       <div>
         <div className={`iconButton ${classes.iconButton}`}>
           <HomeRoundedIcon className={classes.icon} />
