@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Scrollbars from 'react-custom-scrollbars';
-import EventCard from '../EventCard';
+import EventCard from '../EventCard/EventCard';
 import backendURL from '../../utils/config';
 
 const useStyles = makeStyles({
