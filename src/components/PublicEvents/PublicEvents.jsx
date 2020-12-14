@@ -8,11 +8,12 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexDirection: 'column'
   },
   title: {
     color: 'white',
-    margin: '8px 0 16px 0',
+    margin: '8px 16px 16px 16px',
     padding: '0'
   }
 });
@@ -30,17 +31,32 @@ function PublicEvents() {
       });
   }, []);
 
+  function arePublicEvents(events) {
+    if (events.length === 0) {
+      return false;
+    }
+    return true;
+  }
+
   return (
-    <div style={{ height: '75%', width: '100%' }}>
+    <div className={classes.root} style={{ height: '75%', width: '100%' }}>
       <h1 align='center' className={classes.title}>
         Public Events
       </h1>
-      <EventList
-        style={{ backgroundColor: 'red' }}
-        events={events}
-        cardColor='#171D25'
-        backgroundColor='#1E242D'
-      />
+      {arePublicEvents([]) ? (
+        <EventList
+          style={{ backgroundColor: 'red' }}
+          events={events}
+          cardColor='#171D25'
+          backgroundColor='#1E242D'
+        />
+      ) : (
+        <div>
+          <h2 className={classes.title} style={{ marginTop: '64px' }}>
+            There are no public events yet
+          </h2>
+        </div>
+      )}
     </div>
   );
 }
