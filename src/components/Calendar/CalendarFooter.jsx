@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
-import { calendarFooterStyles } from './styles';
+import calendarFooterStyles from './styles';
 import { setDayRange } from './dayRange';
 
 export const CalendarFooter = (props) => {
