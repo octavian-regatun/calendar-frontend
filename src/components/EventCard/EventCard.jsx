@@ -54,7 +54,6 @@ const useStyles = makeStyles({
   colorTag: {
     height: '15px',
     width: '15px',
-    backgroundColor: 'red',
     borderRadius: '50%',
     display: 'inline-block'
   },
@@ -79,7 +78,10 @@ function EventCard(props) {
     <Button className={`${classes.container} ${props.className}`}>
       <div className={classes.content}>
         <div className={classes.containerColorTag}>
-          <span className={classes.colorTag} />
+          <span
+            className={classes.colorTag}
+            style={{ backgroundColor: props.colorTag }}
+          />
         </div>
         <div className={classes.date}>
           <div className={classes.timeFrame}>

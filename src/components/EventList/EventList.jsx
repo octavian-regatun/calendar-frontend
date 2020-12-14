@@ -32,6 +32,12 @@ function EventList() {
       });
   }, []);
 
+  const colors = ['red', 'green', 'yellow', 'blue', 'cyan', 'purple', 'pink'];
+
+  function returnRandomColor(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
   return (
     <Scrollbars className={classes.container}>
       {events.map((event) => (
@@ -42,6 +48,7 @@ function EventList() {
           description={event.description}
           startAt={event.startAt}
           endAt={event.endAt}
+          colorTag={returnRandomColor(colors)}
         />
       ))}
     </Scrollbars>
