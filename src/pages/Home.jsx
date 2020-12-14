@@ -45,7 +45,15 @@ function Home() {
       >
         <Grid container>
           <Grid item lg={3} xs={12} style={{ height: '100vh' }}>
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+            >
               <Calendar />
             </Grid>
             <Grid
@@ -58,10 +66,10 @@ function Home() {
                 alignItems: 'center'
               }}
             >
-              <PublicEvents/>
+              <PublicEvents />
             </Grid>
           </Grid>
-          <Grid item lg={5} xs={12} style={{ height: '100vh' }}>
+          <Grid item lg={4} xs={12} style={{ height: '100vh' }}>
             <EventList
               cardColor='#1E242D'
               backgroundColor='#171D25'
