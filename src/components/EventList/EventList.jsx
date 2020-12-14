@@ -40,16 +40,8 @@ function EventList() {
           className={classes.card}
           title={event.title}
           description={event.description}
-          startAt={`${new Date(event.startAt).getDate()}.${
-            new Date(event.startAt).getMonth() < 9
-              ? `0${new Date(event.startAt).getMonth() + 1}`
-              : new Date(event.startAt).getMonth() + 1
-          }`}
-          endAt={`${new Date(event.endAt).getDate()}.${
-            new Date(event.endAt).getMonth() < 9
-              ? `0${new Date(event.endAt).getMonth() + 1}`
-              : new Date(event.endAt).getMonth() + 1
-          }`}
+          startAt={event.startAt}
+          endAt={event.endAt}
         />
       ))}
     </Scrollbars>
