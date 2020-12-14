@@ -29,7 +29,6 @@ function EventList() {
       .get(`${backendURL}/api/events`, { withCredentials: true })
       .then((res) => {
         setEvents(res.data);
-        console.log(res);
       });
   }, []);
 
