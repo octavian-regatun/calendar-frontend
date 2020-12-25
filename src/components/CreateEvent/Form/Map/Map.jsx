@@ -4,8 +4,7 @@ import ReactMapboxGl from 'react-mapbox-gl';
 import SearchTextField from './SearchTextField/SearchTextField';
 
 const MapMapbox = ReactMapboxGl({
-  accessToken:
-    'pk.eyJ1IjoiYmVuZ285MjMiLCJhIjoiY2ppa2J4dWIwMHcxNjN2b3dydGlkdzhzMiJ9.xkkhK_smxCjTZSOJSebQEQ'
+  accessToken: process.env.REACT_APP_MAPBOX_API_KEY
 });
 
 const useStyles = makeStyles({
