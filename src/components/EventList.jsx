@@ -2,14 +2,13 @@ import { makeStyles } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Scrollbars from 'react-custom-scrollbars';
-import EventCard from '../EventCard/EventCard';
-import backendURL from '../../utils/config';
+import EventCard from './EventCard';
+import backendURL from '../utils/config';
 
 const useStyles = makeStyles({
   container: {
     width: '100%',
     height: '100%',
-    borderRadius: '10px',
     display: 'flex !important',
     flexDirection: 'column',
     alignItems: 'center'
@@ -33,7 +32,7 @@ function EventList(props) {
       className={classes.container}
       style={{ backgroundColor: props.backgroundColor }}
     >
-      {props.events.map((event) => (
+      {props.events.map(event => (
         <EventCard
           key={`event-card-${event._id}`}
           className={classes.card}

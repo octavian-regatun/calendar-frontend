@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import backendURL from '../../utils/config';
-import EventList from '../EventList/EventList';
+import backendURL from '../utils/config';
+import EventList from './EventList';
 
 const useStyles = makeStyles({
   root: {
@@ -26,7 +26,7 @@ function PublicEvents() {
   useEffect(() => {
     axios
       .get(`${backendURL}/api/events`, { withCredentials: true })
-      .then((res) => {
+      .then(res => {
         setEvents(res.data);
       });
   }, []);

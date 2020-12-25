@@ -1,7 +1,7 @@
 import { Button, makeStyles } from '@material-ui/core';
 import React from 'react';
-import customTheme from '../../utils/theme';
-import { addZero } from '../../utils/utils';
+import customTheme from '../utils/theme';
+import { addZero } from '../utils/utils';
 
 const useStyles = makeStyles({
   container: {

@@ -2,12 +2,13 @@ import { Container, Grid, makeStyles } from '@material-ui/core';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Calendar from '../components/Calendar/Calendar';
-import EventList from '../components/EventList/EventList';
-import PublicEvents from '../components/PublicEvents/PublicEvents';
+import CreateEvent from '../components/CreateEvent/CreateEvent';
+import EventList from '../components/EventList';
+import PublicEvents from '../components/PublicEvents';
 import Sidebar from '../components/Sidebar/Sidebar';
 import backendURL from '../utils/config';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     [theme.breakpoints.down('md')]: {
       display: 'none'
@@ -22,7 +23,7 @@ function Home() {
   useEffect(() => {
     axios
       .get(`${backendURL}/api/events`, { withCredentials: true })
-      .then((res) => {
+      .then(res => {
         setEvents(res.data);
       });
   }, []);
@@ -75,6 +76,9 @@ function Home() {
               backgroundColor='#171D25'
               events={events}
             />
+          </Grid>
+          <Grid item lg={5} xs={12} style={{ height: '100vh' }}>
+            <CreateEvent />
           </Grid>
         </Grid>
       </Container>
