@@ -3,7 +3,7 @@ import React from 'react';
 import calendarFooterStyles from './styles';
 import { setDayRange } from './dayRange';
 
-export const CalendarFooter = (props) => {
+export const CalendarFooter = props => {
   const nullDayRange = setDayRange(null, null);
 
   const classes = calendarFooterStyles();
