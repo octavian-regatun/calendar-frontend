@@ -51,12 +51,20 @@ function SearchTextField() {
   const [q, setQ] = useState('');
   const [ip, setIp] = useState(undefined);
   const [suggestions, setSuggestions] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
 
   async function getIp() {
     if (!ip) setIp(await publicIp.v4());
   }
 
   useEffect(async () => {
+    if (q) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+
     const options = {
       params: {
         q,
@@ -65,10 +73,11 @@ function SearchTextField() {
     };
 
     if (ip && q) {
+      setLoading(true);
       await Axios.get(`${backendURL}/api/location/autosuggest`, options).then(
         res => {
           setSuggestions(res.data.items);
-          console.log(res.data);
+          setLoading(false);
         }
       );
     } else if (!q) {
@@ -83,7 +92,8 @@ function SearchTextField() {
 
   return (
     <Autocomplete
-      loading
+      open={open}
+      loading={loading}
       className={classes.autocomplete}
       options={suggestions}
       getOptionLabel={option => option.title}
@@ -98,9 +108,9 @@ function SearchTextField() {
             ...params.InputProps,
             endAdornment: (
               <>
-                {suggestions.length > 0 ? null : (
+                {loading ? (
                   <CircularProgress style={{ color: 'gray' }} size='20px' />
-                )}
+                ) : null}
                 {params.InputProps.endAdornment}
               </>
             )
