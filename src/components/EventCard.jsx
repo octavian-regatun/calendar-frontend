@@ -96,7 +96,7 @@ function EventCard(props) {
               )}`}
             </h4>
             <h4 style={{ margin: '0', padding: '0' }} className={classes.title}>
-              {`${new Date(props.startAt).getDay() + 1}.${addZero(
+              {`${new Date(props.startAt).getDate()}.${addZero(
                 new Date(props.startAt).getMonth() + 1
               )}.${new Date(props.startAt).getFullYear()}`}
             </h4>
@@ -117,7 +117,7 @@ function EventCard(props) {
               style={{ margin: '0 0 0 0', padding: '0' }}
               className={classes.title}
             >
-              {`${new Date(props.endAt).getDay() + 1}.${addZero(
+              {`${new Date(props.endAt).getDate()}.${addZero(
                 new Date(props.endAt).getMonth() + 1
               )}.${new Date(props.endAt).getFullYear()}`}
             </h4>
