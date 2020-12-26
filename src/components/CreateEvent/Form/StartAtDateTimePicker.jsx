@@ -17,9 +17,8 @@ function StartAtDateTimePicker({ event, setEvent }) {
       value={startAt}
       onChange={value => {
         setStartAt(value);
-        setEvent({ ...event, startAt: value });
+        setEvent({ ...event, startAt: value.$d });
       }}
-      DialogProps={{ className: 'GION' }}
     />
   );
 }

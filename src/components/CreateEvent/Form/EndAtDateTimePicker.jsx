@@ -17,7 +17,7 @@ function EndAtDateTimePicker({ event, setEvent }) {
       value={endAt}
       onChange={value => {
         setEndAt(value);
-        setEvent({ ...event, endAt: value });
+        setEvent({ ...event, endAt: value.$d });
       }}
     />
   );
