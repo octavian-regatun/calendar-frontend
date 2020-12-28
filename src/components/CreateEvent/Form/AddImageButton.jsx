@@ -1,16 +1,16 @@
 import { Button } from '@material-ui/core';
 import React from 'react';
+import { fileToBase64 } from '../../../utils/utils';
 
 function AddImageButton({ event, setEvent }) {
   return (
     <>
       <input
-        onChange={e => {
+        onChange={async e => {
           setEvent({
             ...event,
-            image: e.target.files[0]
+            image: await fileToBase64(e.target.files[0])
           });
-          console.log(e.target.files[0]);
         }}
         accept='image/*'
         style={{ display: 'none' }}
