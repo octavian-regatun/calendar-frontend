@@ -1,9 +1,7 @@
 import { makeStyles } from '@material-ui/core';
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Scrollbars from 'react-custom-scrollbars';
 import EventCard from './EventCard';
-import backendURL from '../utils/config';
 
 const useStyles = makeStyles({
   container: {
@@ -21,12 +19,6 @@ const useStyles = makeStyles({
 function EventList(props) {
   const classes = useStyles();
 
-  const colors = ['red', 'green', 'yellow', 'blue', 'cyan', 'purple', 'pink'];
-
-  function returnRandomColor(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
   return (
     <Scrollbars
       className={classes.container}
@@ -40,7 +32,7 @@ function EventList(props) {
           description={event.description}
           startAt={event.startAt}
           endAt={event.endAt}
-          colorTag={returnRandomColor(colors)}
+          colorTag={event.color}
           backgroundColor={props.cardColor}
         />
       ))}
