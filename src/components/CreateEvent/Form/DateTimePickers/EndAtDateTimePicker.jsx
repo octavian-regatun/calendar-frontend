@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import CustomDateTimePicker from '../../CustomDateTimePicker';
+import CustomDateTimePicker from '../../../CustomDateTimePicker';
+import './DateTimePickers.css';
 
 function EndAtDateTimePicker({ event, setEvent }) {
-  const [endAt, setEndAt] = useState(new Date());
+  const [endAt, setEndAt] = useState(null);
 
   return (
     <CustomDateTimePicker
       color='primary'
-      label='Event End Date'
+      label='End Date'
       inputVariant='outlined'
       ampm={false}
-      showTodayButton
       format='DD/MM/YYYY HH:mm'
       fullWidth
       minutesStep={15}
@@ -19,6 +19,7 @@ function EndAtDateTimePicker({ event, setEvent }) {
         setEndAt(value);
         setEvent({ ...event, endAt: value.$d });
       }}
+      DialogProps={{ className: 'DateTimePicker' }}
     />
   );
 }

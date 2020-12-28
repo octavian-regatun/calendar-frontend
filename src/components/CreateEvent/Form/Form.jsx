@@ -4,10 +4,10 @@ import AddEvent from './AddEventButton';
 import AddImageButton from './AddImageButton';
 import ColorPicker from './ColorPicker';
 import DescriptionTextField from './DescriptionTextField';
-import EndAtDateTimePicker from './EndAtDateTimePicker';
+import EndAtDateTimePicker from './DateTimePickers/EndAtDateTimePicker';
 import ImagePreview from './ImagePreview';
 import Map from './Map/Map';
-import StartAtDateTimePicker from './StartAtDateTimePicker';
+import StartAtDateTimePicker from './DateTimePickers/StartAtDateTimePicker';
 import TitleTextField from './TitleTextField';
 
 const useStyles = makeStyles({

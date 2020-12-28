@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import CustomDateTimePicker from '../../CustomDateTimePicker';
+import CustomDateTimPicker from '../../../CustomDateTimePicker';
+import './DateTimePickers.css';
 
 function StartAtDateTimePicker({ event, setEvent }) {
-  const [startAt, setStartAt] = useState(new Date());
+  const [startAt, setStartAt] = useState(null);
 
   return (
-    <CustomDateTimePicker
+    <CustomDateTimPicker
+      variant='dialog'
       color='primary'
-      label='Event Start Date'
+      label='Start Date'
       inputVariant='outlined'
       ampm={false}
       format='DD/MM/YYYY HH:mm'
@@ -18,6 +20,7 @@ function StartAtDateTimePicker({ event, setEvent }) {
         setStartAt(value);
         setEvent({ ...event, startAt: value.$d });
       }}
+      DialogProps={{ className: 'DateTimePicker' }}
     />
   );
 }
